@@ -14,6 +14,7 @@ else
   (cd $FT_DIR && git checkout VER-2-4-10)
 fi
 
-ndk-build 2>&1 -B | head
+ndk-build
 
+cp ./libs/armeabi/libfreetype2.so ~/test/tunneler/platform/android/vendor/freetype2/
 

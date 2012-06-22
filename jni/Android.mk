@@ -1,17 +1,37 @@
 
-#android create lib-project --name freetype2 --target 1 --path . --package com.android.freetype2
+#android create lib-project \
+	--name freetype2 \
+	--target 1 \
+	--path . \
+	--package com.android.freetype2
 
 # LOCAL_PATH points to directory
 # where this Android.mk is located.
 LOCAL_PATH := $(call my-dir)
 
-#SOURCES := $(shell ls freetype2/src/truetype/*.c)
-
 TOP_DIR  := freetype2
 BASE_DIR := /base
 
 SOURCES := truetype/truetype.c \
-	         base/ftbase.c      \
+	         autofit/autofit.c   \
+	         base/ftbase.c       \
+	         base/ftinit.c       \
+	         type1/type1.c       \
+	         cid/type1cid.c      \
+	         cff/cff.c           \
+	         pfr/pfr.c           \
+	         bdf/bdf.c           \
+	         smooth/smooth.c     \
+	         sfnt/sfnt.c         \
+	         raster/raster.c     \
+	         type42/type42.c     \
+	         winfonts/winfnt.c   \
+	         psnames/psmodule.c  \
+	         pcf/pcf.c           \
+	         psaux/psaux.c       \
+	         pshinter/pshinter.c \
+	         gzip/ftgzip.c \
+	         lzw/ftlzw.c \
 	         base/ftsystem.c
 
 SOURCES := $(addprefix ../freetype2/src/,$(SOURCES))
