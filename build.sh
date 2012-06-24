@@ -1,6 +1,6 @@
 
 if [ "$1" = "clean" ]; then
-  rm -r libs obj
+  rm -rf libs obj freetype2 2>/dev/null
   exit
 fi
 
@@ -15,6 +15,4 @@ else
 fi
 
 ndk-build
-
-cp ./libs/armeabi/libfreetype2.so ~/test/tunneler/platform/android/vendor/freetype2/
 

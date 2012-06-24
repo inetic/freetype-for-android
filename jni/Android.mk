@@ -38,7 +38,7 @@ SOURCES := $(addprefix ../freetype2/src/,$(SOURCES))
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE    		:= freetype2
+LOCAL_MODULE    		:= freetype
 LOCAL_SRC_FILES 		:= $(SOURCES)
 LOCAL_C_INCLUDES 		:= freetype2/include
 LOCAL_LDLIBS    		:= -landroid #?
