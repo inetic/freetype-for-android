@@ -1,4 +1,3 @@
-
 if [ "$1" = "clean" ]; then
   rm -rf libs obj freetype2 2>/dev/null
   exit
