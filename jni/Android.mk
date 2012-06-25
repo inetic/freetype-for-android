@@ -9,6 +9,8 @@
 # where this Android.mk is located.
 LOCAL_PATH := $(call my-dir)
 
+LOCAL_ARM_MODE := arm
+
 TOP_DIR  := freetype2
 BASE_DIR := /base
 
@@ -38,11 +40,11 @@ SOURCES := $(addprefix ../freetype2/src/,$(SOURCES))
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE    		:= freetype
+LOCAL_MODULE    		:= libfreetype
 LOCAL_SRC_FILES 		:= $(SOURCES)
 LOCAL_C_INCLUDES 		:= freetype2/include
-LOCAL_LDLIBS    		:= -landroid #?
-LOCAL_CFLAGS        := -DFT2_BUILD_LIBRARY
+#LOCAL_LDLIBS    		:= -landroid #?
+LOCAL_CFLAGS        := -O2 -fPIC -DPIC -DFT2_BUILD_LIBRARY
 
-include $(BUILD_SHARED_LIBRARY)
+include $(BUILD_STATIC_LIBRARY)
 
